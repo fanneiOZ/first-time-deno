@@ -1,0 +1,6 @@
+{
+    "imports": {
+       "deno-std/": "https://deno.land/std/",
+       "@deps/": "file:///Users/panyab/research/repos/first-time-deno/dependencies/"
+    }
+ }
