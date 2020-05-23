@@ -17,13 +17,16 @@ export class PeopleName implements PeopleNameInterface {
     }
 
     public static change(name: PeopleNameInterface, options: PeopleNameOptions): PeopleNameInterface {
-        options = {firstName: options.firstName ?? name.first, lastName: options.lastName ?? name.last}
+        options = {
+          firstName: (options.firstName ?? name.first).trim(),
+          lastName: (options.lastName ?? name.last).trim()
+        }
         return new PeopleName(options)
     }
 
     protected constructor (name?: PeopleNameOptions) {
-        this._firstName = name?.firstName ?? ''
-        this._lastName = name?.lastName ?? ''
+        this._firstName = name?.firstName?.trim() ?? ''
+        this._lastName = name?.lastName?.trim() ?? ''
     }
 
     get first(): string {

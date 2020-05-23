@@ -9,27 +9,27 @@ const peopleNameShouldHaveBlankNamesByDefault = () => {
 }
 
 const peopleNameShouldBeCreatedByOnlyFirstName = () => {
-    const testingObject = PeopleName.createFromOptions({firstName: 'first-name'})
+    const testingObject = PeopleName.createFromOptions({firstName: ' John  '})
 
-    assertEquals(testingObject.first, 'first-name')
+    assertEquals(testingObject.first, 'John')
     assertEquals(testingObject.last, '')
-    assertEquals(testingObject.full, 'first-name')
+    assertEquals(testingObject.full, 'John')
 }
 
 const peopleNameShouldBeCreatedByOnlyLastName = () => {
-    const testingObject = PeopleName.createFromOptions({lastName: 'last-name'})
+    const testingObject = PeopleName.createFromOptions({lastName: '  Doe '})
 
     assertEquals(testingObject.first, '')
-    assertEquals(testingObject.last, 'last-name')
-    assertEquals(testingObject.full, 'last-name')
+    assertEquals(testingObject.last, 'Doe')
+    assertEquals(testingObject.full, 'Doe')
 }
 
 const peopleNameShouldBeCreatedByFullName = () => {
-    const testingObject = PeopleName.createFromOptions({firstName: ' first', lastName: 'last-name '})
+    const testingObject = PeopleName.createFromOptions({firstName: ' John  ', lastName: '  Doe '})
 
-    assertEquals(testingObject.first, ' first')
-    assertEquals(testingObject.last, 'last-name ')
-    assertEquals(testingObject.full, 'first last-name')
+    assertEquals(testingObject.first, 'John')
+    assertEquals(testingObject.last, 'Doe')
+    assertEquals(testingObject.full, 'John Doe')
 }
 const testCases = [
     {name: 'PeopleName should have blank names by default', fn () { peopleNameShouldHaveBlankNamesByDefault() }},
