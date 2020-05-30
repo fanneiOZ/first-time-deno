@@ -1,12 +1,14 @@
-import {RequestComponentType, RequestComponent} from "./request-component-type.ts";
-import { BaseData } from "./base-data.ts";
+import { RequestComponentType, RequestComponent } from "./request-component-type.ts";
+import { BaseData } from "./base-data.ts"
+
+export type BuilderInputs = BaseData<any> | Partial<BaseData<any> | undefined>
 
 export abstract class AbstractBuilder<T extends RequestComponent> {
-    protected componentType: RequestComponentType = RequestComponentType.Abstract
+    protected abstract componentType: RequestComponentType
 
     public getComponentType(): RequestComponentType {
         return this.componentType
     }
 
-    public abstract build(inputs: Partial<BaseData<any>>, ...props: any[]): T;
+    public abstract build(inputs: BuilderInputs, ...props: any[]): T;
 }

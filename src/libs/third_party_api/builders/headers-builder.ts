@@ -4,7 +4,7 @@ import { RequestComponentType } from "../interfaces/request-component-type.ts";
 export class HeadersBuilder extends AbstractBuilder<Headers> {
     protected componentType = RequestComponentType.Headers
 
-    public build(headers: Record<string, string>): Headers {
+    public build(headers?: Record<string, string>): Headers {
         const resultHeaders = new Headers()
 
         if (headers){

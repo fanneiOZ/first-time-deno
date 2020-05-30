@@ -1,7 +1,13 @@
 {
     "compilerOptions": {
-        "module": "ES2015",
+        "module": "ES2017",
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true
+        "emitDecoratorMetadata": true,
+      "lib": [
+        "dom",
+        "es5",
+        "scripthost",
+        "es2017"
+      ]
     }
 }

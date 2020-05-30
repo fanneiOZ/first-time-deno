@@ -7,4 +7,4 @@ export enum RequestComponentType {
 
 }
 
-export type RequestComponent = Headers | ReadableStream<Uint8Array> | string
+export type RequestComponent = Headers | ReadableStream<Uint8Array> | string | undefined
